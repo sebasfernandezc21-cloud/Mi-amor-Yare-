@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para mi amada Yare 💜</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #d8b4f8, #f3e5f5);
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  overflow: hidden;
+}
+
+.contenido {
+  background: rgba(255,255,255,0.2);
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+h1 {
+  color: purple;
+  font-size: 2.5em;
+}
+
+p {
+  font-size: 1.4em;
+  color: #4a004a;
+}
+
+.flores img {
+  width: 80px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+/* Corazones flotando */
+.corazon {
+  position: absolute;
+  color: purple;
+  font-size: 20px;
+  animation: flotar 5s linear infinite;
+}
+
+@keyframes flotar {
+  0% {transform: translateY(100vh);}
+  100% {transform: translateY(-10vh);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="contenido">
+  <h1>Para mi amada Yare 💜</h1>
+
+  <p>
+    Te amo mucho mi niña 💖<br>
+    Siempre estaremos juntos 💜
+  </p>
+
+  <div class="flores">
+    <img src="https://cdn.pixabay.com/photo/2017/08/01/08/29/orchid-2560773_1280.jpg">
+    <img src="https://cdn.pixabay.com/photo/2016/11/29/09/08/orchid-1867461_1280.jpg">
+    <img src="https://cdn.pixabay.com/photo/2018/05/07/11/54/orchid-3385962_1280.jpg">
+  </div>
+</div>
+
+<!-- Música -->
+<audio autoplay loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Corazones -->
+<script>
+function crearCorazon() {
+  const corazon = document.createElement("div");
+  corazon.classList.add("corazon");
+  corazon.innerHTML = "💜";
+  corazon.style.left = Math.random() * 100 + "vw";
+  corazon.style.fontSize = (Math.random() * 20 + 10) + "px";
+  document.body.appendChild(corazon);
+
+  setTimeout(() => {
+    corazon.remove();
+  }, 5000);
+}
+
+setInterval(crearCorazon, 300);
+</script>
+
+</body>
+</html>
